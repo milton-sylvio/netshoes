@@ -1,0 +1,205 @@
+.icon-bag {
+	background: transparent url(../img/bag.png) no-repeat left top;
+	display: block;
+	font-style: normal;
+	margin: auto;
+	position: relative;
+	height: 40px;
+	width: 150px;
+
+	.badge {
+		bottom: -8px;
+		position: absolute;
+		left: 22px;
+	}
+
+	&:after {
+		color: #fff;
+		content: "Sacola";
+		font-size: 24px;
+		font-weight: bold;
+		position: absolute;
+		right: 0;
+		top: 40%;
+		text-transform: uppercase;
+	}
+}
+
+.cart-list-produtcts {
+	display: block;
+	list-style: none;
+	margin: 0;
+    padding: 0;
+	position: relative;
+	// width: 100%;
+
+	.overlay-delete {
+		background-color: rgba(0, 0, 0, 0.7);
+		display: none; 
+		height: 100%;
+		left: 0;
+		top: 0;
+		position: absolute;
+		width: 100%;
+		z-index: 9;
+		.transition(all .7s ease);
+	}
+
+	.delete {
+		color: darken(@color-gray-dark, 100%);
+		font-size: 32px;
+		position: absolute;
+		right: 20px;
+		top: 15px;
+		z-index: 10;
+
+		&:focus,
+		&:hover {
+			color: #fff;
+			.rotate(180deg);
+		}
+	}
+	
+	.produtcts-row {
+		display: inline-block;
+		position: relative;
+		width: 100%;
+
+		.produtcts-grid {
+			border-top: 2px solid darken(@color-gray-dark, 100%);
+			//border-bottom: 2px solid darken(@color-gray-dark, 100%);
+			display: flex;
+			margin-left: 20px;
+			margin-right: 20px;
+			padding-bottom: 25px;
+			padding-top: 25px;
+			position: relative;
+			z-index: 7;
+		}
+
+		&:last-child {
+			.produtcts-grid {
+				// border-bottom: 0;
+				border-bottom: 2px solid darken(@color-gray-dark, 100%);
+			}
+		}
+
+		&.strikethrough {
+		  	.produtcts-grid * {
+		  		text-decoration: line-through;
+		  	}
+		}
+	}
+
+	.cart-list-produtcts_img,
+	.cart-list-produtcts_infos {
+		float: left;
+
+		> * {
+			z-index: 8;
+		}
+	}
+
+	.cart-list-produtcts_img {
+		height: 100%;
+		position: relative;
+		width: 50px;
+	}
+
+	.cart-list-produtcts_infos {
+		margin-left: 20px; 
+		width: 405px;
+	}
+
+	.product-title {
+		color: #fff;
+		font-weight: normal;
+		margin: 0 0 5px;
+		padding: 0;
+	}
+
+	.product-size,
+	.product-color,
+	.product-amount {
+		color: @color-gray-light;
+		font-size: @font-size-small;
+	}
+
+	.product-size,
+	.product-color {
+		// float: left;
+	}
+
+	.product-size {
+		// padding-right: 5px;
+	}
+
+	.product-color {
+
+		&:before {
+			color: @color-gray-light;
+			content: "|";
+			margin-left: 1px;
+		    font-size: 11px;
+		    font-weight: bold;
+		    margin-right: 4px;
+		    position: relative;
+		    top: -1px;
+		}
+	}
+
+	.product-amount {
+		clear: both;
+		display: block;
+	}
+
+	.product-price {
+		color: @color-yellow;
+		position: absolute;
+		right: 0;
+		top: 30%;
+	}
+}
+
+.cart-list-produtcts_infos_details {
+	float: left;
+	width: 80%;
+}
+.cart-list-produtcts_infos_price {
+	float: left;
+	height: 100%;
+	text-align: right;
+	position: relative;
+	width: 20%;
+}
+
+.cart-total {
+	padding: 20px 20px 5px;
+	text-transform: uppercase;
+
+	// > div {
+	// 	float: left;
+	// 	width: 50%;
+	// }
+}
+
+.cart-total_txt {
+	color: darken(@color-gray-light, 10%);
+	position: relative;
+	top: 10px;
+}
+
+.cart-total_value {
+	text-align: right;
+
+	.cart-total_value_price {
+		font-size: @font-size-small * 2;
+		color: @color-yellow;
+	}
+
+	.cart-total_value_installment {
+		display: block;
+		font-size: @font-size-small;
+		color: lighten(@color-gray, 10%);
+	}
+}
