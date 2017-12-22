@@ -30,7 +30,6 @@ var SidebarCart = {
 
 		var el = this.elem;
 
-		// if( is( elem, ":hidden" ) === true ){
 		if (el.classList.contains('active')) {
 			el.classList.remove('active-');
 		}
